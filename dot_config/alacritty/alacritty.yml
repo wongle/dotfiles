@@ -1,9 +1,11 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
-# Import Dracula theme
-# https://github.com/dracula/alacritty/blob/master/dracula.yml
+# Import theme
 import:
-  - ~/.config/alacritty/themes/dracula.yml
+  #- ~/.config/alacritty/themes/catppuccin/catppuccin-latte.yml
+  #- ~/.config/alacritty/themes/catppuccin/catppuccin-frappe.yml
+  #- ~/.config/alacritty/themes/catppuccin/catppuccin-macchiato.yml
+  - ~/.config/alacritty/themes/catppuccin/catppuccin-mocha.yml
 
 window:
   # Window dimensions (changes require restart)
