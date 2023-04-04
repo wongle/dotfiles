@@ -4,6 +4,7 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+    include = ["*/*.yml"]
 
 [".config/bat/themes/catppuccin"]
     type = "archive"
