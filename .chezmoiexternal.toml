@@ -1,6 +1,6 @@
 [".config/alacritty/themes/catppuccin"]
     type = "archive"
-    url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
+    url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
