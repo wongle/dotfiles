@@ -93,6 +93,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+{{ if eq .chezmoi.os "linux" }}
+# Homebrew setup
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{ end }}
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
