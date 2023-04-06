@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Brewfile hash: {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
+brew bundle install --file "$HOME/.config/homebrew/Brewfile"
