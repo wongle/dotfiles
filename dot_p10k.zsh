@@ -29,6 +29,148 @@
   # Zsh >= 5.1 is required.
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
+  # Add Catppuccin flavours
+  # Based on:
+  #   https://github.com/dane-harnett/dotfiles/commit/7235b97f0abbc19d59a3dec395693b6a133b6a81
+  #
+  # catppuccin latte flavour
+  typeset -g -A POWERLEVEL9K_CATPPUCCIN_LATTE=( \
+    # --- colors ---
+    [rosewater]="#dc8a78" \
+    [flamingo]="#dd7878" \
+    [pink]="#ea76cb" \
+    [mauve]="#8839ef" \
+    [red]="#d20f39" \
+    [maroon]="#e64553" \
+    [peach]="#fe640b" \
+    [yellow]="#df8e1d" \
+    [green]="#40a02b" \
+    [teal]="#179299" \
+    [sky]="#04a5e5" \
+    [sapphire]="#209fb5" \
+    [blue]="#1e66f5" \
+    [lavender]="#7287fd" \
+    # --- text, overlays and surfaces ---
+    [text]="#4c4f69" \
+    [subtext1]="#5c5f77" \
+    [subtext0]="#6c6f85" \
+    [overlay2]="#7c7f93" \
+    [overlay1]="#8c8fa1" \
+    [overlay0]="#9ca0b0" \
+    [surface2]="#acb0be" \
+    [surface1]="#bcc0cc" \
+    [surface0]="#ccd0da" \
+    # --- base, mantle and crust ---
+    [base]="#eff1f5" \
+    [mantle]="#e6e9ef" \
+    [crust]="#dce0e8" \
+  )
+  # catppuccin frappe flavour
+  typeset -g -A POWERLEVEL9K_CATPPUCCIN_FRAPPE=( \
+    # --- colors ---
+    [rosewater]="#f2d5cf" \
+    [flamingo]="#eebebe" \
+    [pink]="#f4b8e4" \
+    [mauve]="#ca9ee6" \
+    [red]="#e78284" \
+    [maroon]="#ea999c" \
+    [peach]="#ef9f76" \
+    [yellow]="#e5c890" \
+    [green]="#a6d189" \
+    [teal]="#81c8be" \
+    [sky]="#99d1db" \
+    [sapphire]="#85c1dc" \
+    [blue]="#8caaee" \
+    [lavender]="#babbf1" \
+    # --- text, overlays and surfaces ---
+    [text]="#c6d0f5" \
+    [subtext1]="#b5bfe2" \
+    [subtext0]="#a5adce" \
+    [overlay2]="#949cbb" \
+    [overlay1]="#838ba7" \
+    [overlay0]="#737994" \
+    [surface2]="#626880" \
+    [surface1]="#51576d" \
+    [surface0]="#414559" \
+    # --- base, mantle and crust ---
+    [base]="#303446" \
+    [mantle]="#292c3c" \
+    [crust]="#232634" \
+  )
+  # catppuccin macchiato flavour
+  typeset -g -A POWERLEVEL9K_CATPPUCCIN_MACCHIATO=( \
+    # --- colors ---
+    [rosewater]="#f4dbd6" \
+    [flamingo]="#f0c6c6" \
+    [pink]="#f5bde6" \
+    [mauve]="#c6a0f6" \
+    [red]="#ed8796" \
+    [maroon]="#ee99a0" \
+    [peach]="#f5a97f" \
+    [yellow]="#eed49f" \
+    [green]="#a6da95" \
+    [teal]="#8bd5ca" \
+    [sky]="#91d7e3" \
+    [sapphire]="#7dc4e4" \
+    [blue]="#8aadf4" \
+    [lavender]="#b7bdf8" \
+    # --- text, overlays and surfaces ---
+    [text]="#cad3f5" \
+    [subtext1]="#b8c0e0" \
+    [subtext0]="#a5adcb" \
+    [overlay2]="#939ab7" \
+    [overlay1]="#8087a2" \
+    [overlay0]="#6e738d" \
+    [surface2]="#5b6078" \
+    [surface1]="#494d64" \
+    [surface0]="#363a4f" \
+    # --- base, mantle and crust ---
+    [base]="#24273a" \
+    [mantle]="#1e2030" \
+    [crust]="#181926" \
+  )
+  # catppuccin mocha flavour
+  typeset -g -A POWERLEVEL9K_CATPPUCCIN_MOCHA=( \
+    # --- colors ---
+    [rosewater]="#f5e0dc" \
+    [flamingo]="#f2cdcd" \
+    [pink]="#f5c2e7" \
+    [mauve]="#cba6f7" \
+    [red]="#f38ba8" \
+    [maroon]="#eba0ac" \
+    [peach]="#fab387" \
+    [yellow]="#f9e2af" \
+    [green]="#a6e3a1" \
+    [teal]="#94e2d5" \
+    [sky]="#89dceb" \
+    [sapphire]="#74c7ec" \
+    [blue]="#89b4fa" \
+    [lavender]="#b4befe" \
+    # --- text, overlays and surfaces ---
+    [text]="#cdd6f4" \
+    [subtext1]="#bac2de" \
+    [subtext0]="#a6adc8" \
+    [overlay2]="#9399b2" \
+    [overlay1]="#7f849c" \
+    [overlay0]="#6c7086" \
+    [surface2]="#585b70" \
+    [surface1]="#45475a" \
+    [surface0]="#313244" \
+    # --- base, crust and mantle ---
+    [base]="#1e1e2e" \
+    [mantle]="#181825" \
+    [crust]="#11111b" \
+  )
+  typeset -g -A POWERLEVEL9K_CATPPUCCIN_FLAVOUR=( )
+  # Change the flavour below by changing between:
+  # POWERLEVEL9K_CATPPUCCIN_FRAPPE
+  # POWERLEVEL9K_CATPPUCCIN_LATTE
+  # POWERLEVEL9K_CATPPUCCIN_MACCHIATO
+  # POWERLEVEL9K_CATPPUCCIN_MOCHA
+  for key value in ${(kv)POWERLEVEL9K_CATPPUCCIN_MOCHA}; do
+    POWERLEVEL9K_CATPPUCCIN_FLAVOUR[$key]=${value}
+  done
+
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
@@ -144,9 +286,9 @@
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
   # Connect left prompt lines with these symbols.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%242F╭─'
-  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%242F├─'
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%242F╰─'
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[surface2]}}╭─"
+  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[surface2]}}├─"
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[surface2]}}╰─"
   # Connect right prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
@@ -192,9 +334,9 @@
 
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[green]}
   # Red prompt symbol if the last command failed.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[maroon]}
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
@@ -211,17 +353,17 @@
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=31
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[lavender]}
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=103
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[blue]}
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=39
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[lavender]}
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -260,7 +402,7 @@
   # This moves the truncation point to the right (positive offset) or to the left (negative offset)
   # relative to the marker. Plain "first" and "last" are equivalent to "first:0" and "last:0"
   # respectively.
-  typeset -g POWERLEVEL9K_DIR_TRUNCATE_BEFORE_MARKER=false
+  typeset -g POWERLEVEL9K_DIR_TRUNCATE_BEFORE_MARKER="first"
   # Don't shorten this many last directory segments. They are anchors.
   typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
   # Shorten directory if it's longer than this even if there is space for it. The value can
@@ -287,7 +429,7 @@
 
   # The default icon shown next to non-writable and non-existent directories when
   # POWERLEVEL9K_DIR_SHOW_WRITABLE is set to v3.
-  # typeset -g POWERLEVEL9K_LOCK_ICON='⭐'
+  typeset -g POWERLEVEL9K_LOCK_ICON="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[red]}}"
 
   # POWERLEVEL9K_DIR_CLASSES allows you to specify custom icons and colors for different
   # directories. It must be an array with 3 * N elements. Each triplet consists of:
@@ -371,11 +513,11 @@
 
     if (( $1 )); then
       # Styling for up-to-date Git status.
-      local       meta='%f'     # default foreground
-      local      clean='%76F'   # green foreground
-      local   modified='%178F'  # yellow foreground
-      local  untracked='%39F'   # blue foreground
-      local conflicted='%196F'  # red foreground
+      local       meta="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[rosewater]}}"  # default foreground
+      local      clean="%B%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[pink]}}"     # pink foreground
+      local   modified="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[yellow]}}"     # yellow foreground
+      local  untracked="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[blue]}}"       # blue foreground
+      local conflicted="%F{${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[red]}}"        # red foreground
     else
       # Styling for incomplete and stale Git status.
       local       meta='%244F'  # grey foreground
@@ -482,7 +624,7 @@
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
 
   # Icon color.
-  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=76
+  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[pink]}
   typeset -g POWERLEVEL9K_VCS_LOADING_VISUAL_IDENTIFIER_COLOR=244
   # Custom icon.
   # typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -1565,7 +1707,7 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND=66
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=${POWERLEVEL9K_CATPPUCCIN_FLAVOUR[overlay1]}
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%I:%M:%S %p}'
   # If set to true, time will update when you hit enter. This way prompts for the past
