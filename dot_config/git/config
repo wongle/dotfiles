@@ -1,0 +1,16 @@
+[user]
+  name = Tim Wong
+  email = 124337+wongle@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPs7vlJ2XYyJ6jtc3vBpHHzGHjvbErwsDlU1GY1u53tn
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
+[init]
+  defaultBranch = main
