@@ -18,3 +18,4 @@ mise activate fish | source
 
 # Starship
 starship init fish | source
+enable_transience
