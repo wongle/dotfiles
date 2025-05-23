@@ -6,5 +6,10 @@ packages:
         - starship
         - mise
         - neovim
+        - lazygit
+        - curl
+        - fzf
+        - ripgrep
+        - fd
       aur:
         
