@@ -6,8 +6,12 @@
 [gpg]
   format = ssh
 
+{{- if eq .chezmoi.os "linux" -}}
+{{- if not (or (env "SSH_CONNECTION") (env "SSH_CLIENT")) }}
 [gpg "ssh"]
   program = "/opt/1Password/op-ssh-sign"
+{{- end }}
+{{- end }}
 
 [commit]
   gpgsign = true
