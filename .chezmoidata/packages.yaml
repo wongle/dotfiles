@@ -1,0 +1,10 @@
+packages:
+  linux:
+    arch:
+      pacman:
+        - fish
+        - starship
+        - mise
+        - neovim
+      aur:
+        
