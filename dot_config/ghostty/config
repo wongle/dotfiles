@@ -6,7 +6,10 @@ window-theme = ghostty
 background-opacity = 0.95
 background-blur = true
 
-window-padding-x = 8
-window-padding-y = 4
+window-height = 30
+window-width = 150
+
+window-padding-x = 10
+window-padding-balance = true
 
 theme = catppuccin-mocha
