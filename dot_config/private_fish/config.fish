@@ -19,3 +19,6 @@ mise activate fish | source
 # Starship
 starship init fish | source
 enable_transience
+
+# Aliases
+alias ls="eza -g --group-directories-first --git"
