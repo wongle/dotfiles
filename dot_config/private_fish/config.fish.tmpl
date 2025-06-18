@@ -18,7 +18,7 @@ source ~/.config/op/plugins.sh
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{ else if eq .chezmoi.os "darwin" -}}
 /opt/homebrew/bin/brew shellenv fish | source
-{{ end -}}
+{{ end }}
 
 # Starship
 starship init fish | source
