@@ -3,6 +3,32 @@
 
 palette = "catppuccin_mocha"
 
+right_format = "$username$hostname"
+
+[username]
+format = "[$user]($style)"
+
+[hostname]
+ssh_symbol = ' [󰌘 ](overlay1)'
+format = '[$ssh_symbol$hostname]($style) '
+style = "subtext0 bold"
+
+[directory]
+truncation_length = 4
+style = "bold lavender"
+read_only = "  "
+
+[kubernetes]
+disabled = false
+# symbol = '󱃾 '
+style = "bold rosewater"
+format = '[$symbol$context( \($namespace\))]($style) in '
+
+[[kubernetes.contexts]]
+context_pattern = "^production$"
+context_alias = "production"
+style = "teal"
+
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
