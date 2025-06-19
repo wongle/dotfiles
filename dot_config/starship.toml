@@ -3,7 +3,7 @@
 
 palette = "catppuccin_mocha"
 
-right_format = "$username$hostname"
+right_format = "$username$hostname$kubernetes"
 
 [username]
 format = "[$user]($style)"
@@ -20,9 +20,9 @@ read_only = "  "
 
 [kubernetes]
 disabled = false
-# symbol = '󱃾 '
+symbol = '󱃾 '
 style = "bold rosewater"
-format = '[$symbol$context( \($namespace\))]($style) in '
+format = '[$symbol$context( \($namespace\))]($style)'
 
 [[kubernetes.contexts]]
 context_pattern = "^production$"
