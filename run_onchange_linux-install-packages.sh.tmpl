@@ -2,8 +2,22 @@
 {{ if eq .chezmoi.osRelease.id "arch" -}}
 #!/bin/bash
 
+# Check if AUR helper paru is installed
+{{- if not (lookPath "paru") }}
+sudo pacman -S --needed base-devel --noconfirm
+git clone https://aur.archlinux.org/paru.git /tmp/paru
+cd /tmp/paru
+makepkg -si --noconfirm
+rm -rf /tmp/paru
+{{- end }}
+
 # Install pacman packages
 sudo pacman -S --needed --noconfirm {{ range .packages.linux.arch.pacman }}{{ . }} {{ end }}
+
+# Install AUR packages
+{{- if (lookPath "paru") }}
+paru -S --needed {{ range .packages.linux.arch.aur }}{{ . }} {{ end }}
+{{- end }}
 
 {{ end -}}
 {{ end -}}
