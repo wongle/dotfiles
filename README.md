@@ -3,5 +3,5 @@
 Managed with chezmoi.
 
 ```fish
-chezmoi init --apply wongle
+chezmoi init --apply --ssh wongle
 ```
